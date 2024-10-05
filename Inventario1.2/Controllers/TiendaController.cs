@@ -73,7 +73,7 @@ namespace Inventario1._2.Controllers
             {
                 using (DBModel context = new DBModel())
                 {
-                    context.Entry(tienda).State = EntityState.Modified;
+                    context.Entry(tienda).State = (System.Data.Entity.EntityState)EntityState.Modified;
                     context.SaveChanges();
 
                 }

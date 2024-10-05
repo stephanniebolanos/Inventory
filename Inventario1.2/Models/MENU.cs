@@ -11,18 +11,27 @@ namespace Inventario1._2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class MENU
     {
         public MENU()
         {
             this.SUBMENU = new HashSet<SUBMENU>();
         }
-    
+
+        [Display(Name = "ID")]
         public int IdMenu { get; set; }
+        [Display(Name = "Nombre")]
         public string Nombre { get; set; }
+        [Display(Name = "Icono")]
         public string Icono { get; set; }
+        [Display(Name = "Activo")]
         public Nullable<bool> Activo { get; set; }
+        [Display(Name = "Fecha de Registro")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.DateTime)]
+
         public Nullable<System.DateTime> FechaRegistro { get; set; }
     
         public virtual ICollection<SUBMENU> SUBMENU { get; set; }
