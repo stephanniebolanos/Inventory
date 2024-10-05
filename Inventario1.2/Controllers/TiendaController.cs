@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Inventario1._2.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,14 +13,21 @@ namespace Inventario1._2.Controllers
     {
         // GET: Tienda
         public ActionResult Index()
+
         {
-            return View();
+            using (DBModel context = new DBModel())
+            {
+                return View(context.TIENDA.ToList());
+            }
         }
 
         // GET: Tienda/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            using (DBModel context = new DBModel())
+            {
+                return View(context.TIENDA.Where(x => x.IdTienda == id).FirstOrDefault());
+            }
         }
 
         // GET: Tienda/Create
@@ -28,11 +38,15 @@ namespace Inventario1._2.Controllers
 
         // POST: Tienda/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(TIENDA tienda)
         {
             try
             {
-                // TODO: Add insert logic here
+                using (DBModel context = new DBModel())
+                {
+                    context.TIENDA.Add(tienda);
+                    context.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }
@@ -45,16 +59,24 @@ namespace Inventario1._2.Controllers
         // GET: Tienda/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            using (DBModel context = new DBModel())
+            {
+                return View(context.TIENDA.Where(x => x.IdTienda == id).FirstOrDefault());
+            }
         }
 
         // POST: Tienda/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, TIENDA tienda)
         {
             try
             {
-                // TODO: Add update logic here
+                using (DBModel context = new DBModel())
+                {
+                    context.Entry(tienda).State = EntityState.Modified;
+                    context.SaveChanges();
+
+                }
 
                 return RedirectToAction("Index");
             }
@@ -67,7 +89,10 @@ namespace Inventario1._2.Controllers
         // GET: Tienda/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            using (DBModel context = new DBModel())
+            {
+                return View(context.TIENDA.Where(x => x.IdTienda == id).FirstOrDefault());
+            }
         }
 
         // POST: Tienda/Delete/5
@@ -76,7 +101,12 @@ namespace Inventario1._2.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                using (DBModel context = new DBModel())
+                {
+                    TIENDA tienda = context.TIENDA.Where(x => x.IdTienda == id).FirstOrDefault();
+                    context.TIENDA.Remove(tienda);
+                    context.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }

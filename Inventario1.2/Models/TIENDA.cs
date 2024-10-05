@@ -11,7 +11,8 @@ namespace Inventario1._2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TIENDA
     {
         public TIENDA()
@@ -21,13 +22,22 @@ namespace Inventario1._2.Models
             this.USUARIO = new HashSet<USUARIO>();
             this.VENTA = new HashSet<VENTA>();
         }
-    
+
+        [Display(Name = "ID")]
         public int IdTienda { get; set; }
+        [Display(Name = "NOMBRE")]
         public string Nombre { get; set; }
+        [Display(Name = "RUC")]
         public string RUC { get; set; }
+        [Display(Name = "DIRECCION")]
         public string Direccion { get; set; }
+        [Display(Name = "TELEFONO")]
         public string Telefono { get; set; }
+        [Display(Name = "ACTIVO")]
         public Nullable<bool> Activo { get; set; }
+        [Display(Name = "Fecha de Registro")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.DateTime)]
         public Nullable<System.DateTime> FechaRegistro { get; set; }
     
         public virtual ICollection<COMPRA> COMPRA { get; set; }
