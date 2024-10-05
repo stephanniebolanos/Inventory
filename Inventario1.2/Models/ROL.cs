@@ -21,7 +21,7 @@ namespace Inventario1._2.Models
             this.USUARIO = new HashSet<USUARIO>();
         }
 
-        [Display(Name = "#")]
+        [Display(Name = "ID")]
         public int IdRol { get; set; }
 
         [Display(Name = "Descripción")]
