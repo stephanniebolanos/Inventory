@@ -1,20 +1,28 @@
-VERSIÓN
-*AspireInventory1.2
+# CHANGELOG - AspireInventory1.2
 
-FECHA DE CAMBIOS
-5 de Octubre del 2024
+## VERSIÓN
+*AspireInventory1.2*
 
-DESCRIPCIÓN DEL CAMBIO
-1-Creación de 2 nuevo controladores: Dentro de este cambio podemos observar que se realizaron modificaciones en la clase Controllers, se agregaron TiendaControllers y MenuControllers
-los cuales tienen como función llamar y recibir datos
+## FECHA DE CAMBIOS
+*5 de Octubre del 2024*
 
-2- Modificación de controlador Tienda: Dentro del controlador tienda se agregaron nuevas funcionalidades para el funcioanmiento correcto al momento de crear, leer, editar y eliminar datos
-que esten dentro de la tabla tienda.
+## DESCRIPCIÓN DEL CAMBIO
 
-3-Creación de las vistas para Tienda: En este cambio podemos observar que se han creado las vistas para tienda que implica: Index,Create,Delete,Details y Edit, las cuales funcionan para que
-el usuario pueda observar esas opciones al momento de ingresar a la aplicación.
+1. **Agregar .gitattributes y .gitignore**:  
+   Se añaden estos archivos para garantizar que el repositorio esté limpio y organizado. Evitan la inclusión de archivos innecesarios o privados en el control de versiones.
 
-IMPACTO DEL PROYECTO
+2. *Inicio del desarrollo en Git*:  
+   Este commit marca el punto de partida del desarrollo del proyecto, asegurando que todos los archivos esenciales estén versionados para facilitar la clonación o descarga por otros desarrolladores.
 
-Podemos observar que gracias a los cambios mencionados anteriormente de Roles y tienda (hasta el momento) tenemos un mejor manejo de los datos que estan dentro de la base de datos de este
-proyecto. Lo cual implica que el usuario nos pueda compartir mas información y almacenarla de manera correcta.
+3. **Creación de dos nuevos controladores (TiendaControllers y MenuControllers):  
+   Se agregan dos controladores en la clase Controllers que gestionan el flujo de datos de las respectivas secciones.
+
+4. **Modificación del controlador TiendaController**:  
+   Se agregan nuevas funcionalidades para permitir la creación, lectura, edición y eliminación de datos en la tabla tienda.
+
+5. *Creación de vistas para la tabla Tienda*:  
+   Se crean las vistas para las acciones Index, Create, Delete, Details y Edit, que permiten al usuario interactuar visualmente con los datos de la tabla tienda.
+
+## IMPACTO EN EL PROYECTO
+
+Gracias a los cambios mencionados, el manejo de los datos en la base de datos se ha mejorado considerablemente, permitiendo al usuario compartir más información y almacenarla correctamente dentro del sistema, optimizando la funcionalidad del módulo de Tienda y Roles.
