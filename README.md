@@ -9,7 +9,7 @@ Este proyecto está diseñado para establecer una conexión entre una base de da
 - **Carpeta BD**: La base de datos necesaria para el programa se encuentra en una carpeta llamada `BD` en este repositorio.
 
 ## Configuración de la Base de Datos
-1. Acceda a la carpeta `BD` en el repositorio y ubique los siguientes scripts:
+1. Acceda a la carpeta `Scripts` en el repositorio y ubique los siguientes scripts:
    - `001_BASE_DE_DATOS_Y_TABLAS.sql`: Este script crea la base de datos y sus tablas.
    - `002_INSERT_TABLES.sql`: Este script inserta los datos iniciales en las tablas.
    
