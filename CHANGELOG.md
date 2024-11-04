@@ -22,6 +22,10 @@
 
 5. *Creación de vistas para la tabla Tienda*:  
    Se crean las vistas para las acciones Index, Create, Delete, Details y Edit, que permiten al usuario interactuar visualmente con los datos de la tabla tienda.
+   
+6. Indicaciones para conexión de base de datos:  
+   Se creo el archivo README.md para proceso de conexion de BD
+   
 
 ## IMPACTO EN EL PROYECTO
 
